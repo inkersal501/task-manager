@@ -2,12 +2,13 @@ const cors = require("cors");
 const express = require("express");
 const mongoose = require("mongoose");
 const taskRoutes = require("./routes/task.route");  
+require('dotenv').config();
+const DB_URI = process.env.MONGO_URI;
 
 const app = express();
 const PORT = 8082;
 // const DB_URI = 'mongodb://localhost:27017/task-manager';
-const DB_URI = 'mongodb+srv://inkersal501:test123@cluster0.uoc8c.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
-
+ 
 mongoose.connect(DB_URI, {
     "useNewUrlParser" :true,
     "useUnifiedTopology": true
